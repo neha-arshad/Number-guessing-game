@@ -4,7 +4,7 @@
 ## Run the Game
 
 ```
-npx neha.dev-number-guessing-game
+npx @neha.dev/numguess 
 ```
 
 ## Packages Used
