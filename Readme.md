@@ -1,6 +1,5 @@
 # Cli-Number Guessing Game
 
-A calculator CLI with basic operators.
 
 ## Run the Game
 
