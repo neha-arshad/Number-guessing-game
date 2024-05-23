@@ -16,28 +16,18 @@ async function myWellcome() {
 myWellcome();
 // start game//
 const guessNumber = Math.floor(Math.random() * 6 + 1);
-const answer = await inquirer.prompt({
-    name: "GuessNumber",
-    type: "number",
-    //message : "guess a number between 1 to 6"
-});
-if (answer.GuessNumber === guessNumber) {
-    console.log(chalk.blueBright("Congratulations🎉 you guess right number"));
+let playing = true;
+while (playing) {
+    const answer = await inquirer.prompt({
+        name: "GuessNumber",
+        type: "number",
+        message: "guess a number between 1 to 6"
+    });
+    if (answer.GuessNumber === guessNumber) {
+        console.log(chalk.blueBright("Congratulations🎉 you guess right number"));
+        playing = false;
+    }
+    else {
+        console.log(chalk.redBright.bold.italic("you loss the game 🥺\n\n Thanks for playing Number Guessing Game 👍"));
+    }
 }
-else {
-    console.log(chalk.redBright("you loss the game 🥺\n\n Thanks for playing Number Guessing Game 👍"));
-}
-//AGAIN START//
-async function againStart() {
-    do {
-        var again = await inquirer
-            .prompt([
-            { type: "input",
-                name: "restart",
-                message: "Do you want to continue? press y or n",
-                choices: ["yes", "no"]
-            }
-        ]);
-    } while (again.restart == "y" || again.restart == "Y" || again.restart == "yes" || again.restart == "YES");
-}
-againStart();
